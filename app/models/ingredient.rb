@@ -1,3 +1,7 @@
 class Ingredient < ApplicationRecord
-  has_many :doses, class_name: "dose", foreign_key: "dose_id"
+  has_many :doses
+  has_many :cocktails, through: :doses
+
+  validates :name, presence: true, uniqueness: true
+  
 end
