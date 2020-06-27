@@ -1,5 +1,6 @@
 <div>
 <h1><%= @cocktail.name %></h1>
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
   <% @cocktail.doses.each do |d| %>
     <p class="d-inline btn btn-success"><%= d.ingredient.name %></p>
     <p class="d-inline btn btn-primary"><%= d.description %></p>
